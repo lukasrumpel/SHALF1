@@ -1,8 +1,7 @@
 /*
  * shalf1GPIO.c
  *
- *  Created on: 31.08.2021
- *      Author: lukas
+ *      Author: lukasrumpel
  */
 
 #include <shalf1GPIO.h>

@@ -1,9 +1,9 @@
 /*
  * shalf1timer.c
  *
- *  Created on: 27.11.2021
- *      Author: lukas
+ *      Author: lukasrumpel
  */
+
 #include <stm32f1xx.h>
 #include <system_stm32f1xx.h>
 #include <system_stm32f1xx.c>

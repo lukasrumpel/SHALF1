@@ -1,8 +1,7 @@
 /*
  * shalf1System.c
  *
- *  Created on: 30.01.2022
- *      Author: lukas
+ *      Author: lukasrumpel
  */
 
 #include <shalf1System.h>

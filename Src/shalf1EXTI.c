@@ -1,8 +1,7 @@
 /*
  * shalf1EXTI.c
  *
- *  Created on: 31.10.2021
- *      Author: lukas
+ *      Author: lukasrumpel
  */
 
 #include <shalf1EXTI.h>

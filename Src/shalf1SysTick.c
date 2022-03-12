@@ -1,8 +1,7 @@
 /*
  * shalf1SysTick.c
  *
- *  Created on: Oct 31, 2021
- *      Author: lukas
+ *      Author: lukasrumpel
  */
 
 #include <shalf1SysTick.h>
