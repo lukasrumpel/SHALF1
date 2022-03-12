@@ -6,4 +6,4 @@ SHALF1 is a small hardware abstraction library for STM32F1 MCUs, it is is inspir
 This library is currently under construction but for most functional units of the F1 family (low- and medium density Controllers -> support for others will be added!) it is working.
 
 ----------------------------------------------------------
-In oder to use the SHALF1 you need the CMSIS to be installed. You can simply copy the SHALF1 Files to your Project and use them. 
+In oder to use the SHALF1 you need the CMSIS and an IDE (e.g. STM32 Cube IDE) to be installed. You can simply copy the SHALF1 Files to your Project and use them. 
