@@ -8,8 +8,9 @@
 #include <shalf1GPIO.h>
 #include <stdbool.h>
  /*
-  * Desc.: setzt die Bits im AFIO EXTICR Register, um die Inputs als Interruptquellen zu setzen, hierzu gibt es vier EXTICR Register, welche jeweils vier PINs aller Ports beschreiben
-  * @param: PORT, PIN
+  * Desc.: sets the Bits in AFIO EXTICR Register, to set the Interrupts as Sources. Ther are four EXTICR Registers (4 Pins per EXTICR)
+  * @param: (PORT) port: Port
+  * @param: (Pin) pin: Pin
   * @return: none
   */
 extern void extiConfigureEXTI(PORT port, PIN_NUM pin){
@@ -52,25 +53,83 @@ extern void extiConfigureEXTI(PORT port, PIN_NUM pin){
 }
 
 /*
- * Des.: setzt das zugehoerige Bit im IMR (Interrupt Mask Register), aktiviert also die Ijnterruptquelle
- * @param: Nummer des Interrupt
- * @return: keine
+ * Des.: stes the corresponding Bit in the IMR Register, activates the Interruptsource
+ * @param: (irq_Num) irq: EXTI_P0,
+							EXTI_P1,
+							EXTI_P2,
+							EXTI_P3,
+							EXTI_P4,
+							EXTI_P5,
+							EXTI_P6,
+							EXTI_P7,
+							EXTI_P8,
+							EXTI_P9,
+							EXTI_P10,
+							EXTI_P11,
+							EXTI_P12,
+							EXTI_P13,
+							EXTI_P14,
+							EXTI_P15,
+							EXTI_PVDOUT,
+							EXTI_RTCALARM,
+							EXTI_USBWAKEUP,
+							EXTI_ETHERNETWAKEUP,
+ * @return: none
  */
 extern void extiEnableIrq(irq_NUM irq){
 	EXTI->IMR |= 1 << irq; //schiebt das Bit an die korrespondierende Stelle des IMR
 }
 
 /*
- * Des.: loeascht das zugehoerige Bit im IMR (Interrupt Mask Register), deaktiviert also die Ijnterruptquelle
- * @param: Nummer des Interrupt
- * @return: keine
+ * Des.: clears the Bit in the IMR, deactivates Interrupt
+ * @param: (irq_Num) irq: EXTI_P0,
+							EXTI_P1,
+							EXTI_P2,
+							EXTI_P3,
+							EXTI_P4,
+							EXTI_P5,
+							EXTI_P6,
+							EXTI_P7,
+							EXTI_P8,
+							EXTI_P9,
+							EXTI_P10,
+							EXTI_P11,
+							EXTI_P12,
+							EXTI_P13,
+							EXTI_P14,
+							EXTI_P15,
+							EXTI_PVDOUT,
+							EXTI_RTCALARM,
+							EXTI_USBWAKEUP,
+							EXTI_ETHERNETWAKEUP,
+ * @return: none
  */
 extern void extiDisableIrq(irq_NUM irq){
 	EXTI->IMR &= ~(1 << irq);
 }
 /*
- * Des.: konfiguriert, ob bei steigender oder fallender Flanke ein ISR ausgeloest werden soll
- * @param: steigende (TRUE) oder fallende (FALSE) Flanke, Irq Nummer
+ * Des.: configures if the ISR is triggered on rising or falling Edge
+ * @param: (bool) rising: true -> rising Edge; false -> falling Edge
+ * @param: (irq_Num) irq: EXTI_P0,
+							EXTI_P1,
+							EXTI_P2,
+							EXTI_P3,
+							EXTI_P4,
+							EXTI_P5,
+							EXTI_P6,
+							EXTI_P7,
+							EXTI_P8,
+							EXTI_P9,
+							EXTI_P10,
+							EXTI_P11,
+							EXTI_P12,
+							EXTI_P13,
+							EXTI_P14,
+							EXTI_P15,
+							EXTI_PVDOUT,
+							EXTI_RTCALARM,
+							EXTI_USBWAKEUP,
+							EXTI_ETHERNETWAKEUP,
  * @return: none
  */
 extern void extiSetTriggerEdge(bool rising, irq_NUM irq){
