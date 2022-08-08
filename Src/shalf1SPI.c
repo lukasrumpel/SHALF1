@@ -1,7 +1,8 @@
 /*
  * shalf1SPI.c
  *
- *      Author: lukasrumpel
+ *  Created on: 03.03.2022
+ *      Author: lukas
  */
 
 #include <shalf1GPIO.h>
