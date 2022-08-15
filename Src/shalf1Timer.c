@@ -6,7 +6,7 @@
 
 #include <stm32f1xx.h>
 #include <system_stm32f1xx.h>
-#include <system_stm32f1xx.c>
+//#include <system_stm32f1xx.c>
 #include <shalf1Timer.h>
 #include <shalf1GPIO.h>
 #include <stdbool.h>
