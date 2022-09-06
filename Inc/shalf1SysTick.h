@@ -20,6 +20,7 @@
 #define SYSTICK_1S		(1)
 
 extern void systickInit(uint32_t timebase);
+extern void sysTickInitPLL(uint32_t timebase);
 extern void systickSetTicks(uint32_t ticks);
 extern bool isSysTickExpired();
 extern void SysTick_Handler(void);

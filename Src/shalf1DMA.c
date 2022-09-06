@@ -44,11 +44,11 @@ extern DMA_ERR_CODE dmaInit(DMA_TypeDef* dma, DMA_Channel_TypeDef* dmaChannel, u
 	if(dma == DMA1){
 		RCC->AHBENR |= RCC_AHBENR_DMA1EN;
 	}
-/*
+#if defined(HIGH_DENS) || defined(XL_DENS)
 	else if(dma == DMA2){
 		RCC->AHBENR |= RCC_AHBENR_DMA2EN;
 	}
-*/
+#endif
 	else{
 		return DMA_INVALID_DMA;
 	}

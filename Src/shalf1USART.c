@@ -237,3 +237,35 @@ extern void USARTGetString(USART_TypeDef *usart, char *str, uint16_t leng){
 	}
 	*str = '\0';
 }
+
+/*
+  * Desc.: enables/disables DMA Mode for the USART Transmitter
+  * @param: (USART_TypeDef*)usart: USART
+  * @param: (USART_DMA_TXMode) dmaMode: DMA_TRANSMIT_OFF,
+										DMA_TRANSMIT_ON
+  * @return: none
+  */
+extern void usartSetDmaTxMode(USART_TypeDef *usart, USART_DMA_TXMode dmaMode){
+	 if (DMA_TRANSMIT_OFF == dmaMode){
+	    usart->CR3 &= ~USART_CR3_DMAT_Msk;
+	 }
+	 else{
+	    usart->CR3 |= USART_CR3_DMAT;
+	 }
+}
+
+/*
+  * Desc.: enables/disables DMA Mode for the USART Receiver
+  * @param: (USART_TypeDef*)usart: USART
+  * @param: (USART_DMA_RXMode) dmaMode: DMA_RECEIVE_OFF,
+										DMA_RECEIVE_ON
+  * @return: none
+  */
+extern void usartSetDmaRxMode(USART_TypeDef *usart, USART_DMA_RXMode dmaMode){
+	 if (DMA_RECEIVE_OFF == dmaMode){
+	    usart->CR3 &= ~USART_CR3_DMAR_Msk;
+	 }
+	 else{
+	    usart->CR3 |= USART_CR3_DMAR;
+	 }
+}

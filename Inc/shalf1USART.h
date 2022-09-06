@@ -95,6 +95,16 @@ typedef enum
     USART_RXNE_FLG
 } USART_IRQ_FLAG_t;
 
+typedef enum{
+	DMA_RECEIVE_OFF,
+	DMA_RECEIVE_ON
+}USART_DMA_RXMode;
+
+typedef enum{
+	DMA_TRANSMIT_OFF,
+	DMA_TRANSMIT_ON
+}USART_DMA_TXMode;
+
 extern void USARTEnable(USART_TypeDef* USART);
 extern void USARTDisable(USART_TypeDef* USART);
 extern void USARTSetBaudrate(USART_TypeDef* usart, uint16_t brrVal);
@@ -105,5 +115,7 @@ extern void USARTSendString(USART_TypeDef* usart, char* str);
 extern void USARTSendChar(USART_TypeDef* usart, char character);
 extern char USARTGetChar(USART_TypeDef *usart);
 extern void USARTGetString(USART_TypeDef *usart, char *str, uint16_t leng);
+extern void usartSetDmaTxMode(USART_TypeDef *usart, USART_DMA_TXMode dmaMode);
+extern void usartSetDmaRxMode(USART_TypeDef *usart, USART_DMA_RXMode dmaMode);
 
 #endif /* INC_SHALF1USART_H_ */

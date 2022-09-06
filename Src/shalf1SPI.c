@@ -142,15 +142,18 @@ extern void spiDisable(SPI_TypeDef *spi){
   * @param: (GPIO_TypeDef*) cs_port: Port of CS PIN
   * @param: (PIN_NUM) cs_pin: CS PIN
   * @param: (uint8_t) data: data to be sent
+  * @param: (bool) manCS: manual Chipselect, CS is controlled from somewhere else
   * @return: (uint8_t) received data
   */
-extern uint8_t spiTransceive(SPI_TypeDef *spi, GPIO_TypeDef *cs_port, PIN_NUM cs_pin, uint8_t data){
+extern uint8_t spiTransceive(SPI_TypeDef *spi, GPIO_TypeDef *cs_port, PIN_NUM cs_pin, uint8_t data, bool manCS){
 	static uint8_t state = SPI_SEND_BYTE_1;
 	uint8_t rx_byte;
 
 	switch(state){
 	case SPI_SEND_BYTE_1:
-		gpioResetPin(cs_port, cs_pin);
+		if(!manCS){
+			gpioResetPin(cs_port, cs_pin);
+		}
 
 		while(!(SPI1->SR & SPI_SR_TXE)){}
 
@@ -168,8 +171,9 @@ extern uint8_t spiTransceive(SPI_TypeDef *spi, GPIO_TypeDef *cs_port, PIN_NUM cs
 		while(SPI1->SR & SPI_SR_BSY){}
 
 		state = SPI_SEND_BYTE_1;
-
-		gpioSetPin(cs_port, cs_pin);
+		if(!manCS){
+			gpioSetPin(cs_port, cs_pin);
+		}
 		break;
 	}
 

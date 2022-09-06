@@ -71,6 +71,6 @@ typedef enum{
 extern void spiInit(SPI_TypeDef *spi, SPI_CLOCK_DIV clockdivider, SPI_DATALEN datalen, SPI_SSM ssm, SPI_SSI_LVL ssi_lvl, SPI_OPMODE opmode, SPI_PHASE phase, SPI_POLARITY polarity);
 extern void spiEnable(SPI_TypeDef *spi);
 extern void spiDisable(SPI_TypeDef *spi);
-extern uint8_t spiTransceive(SPI_TypeDef *spi, GPIO_TypeDef *cs_port, PIN_NUM cs_pin, uint8_t data);
+extern uint8_t spiTransceive(SPI_TypeDef *spi, GPIO_TypeDef *cs_port, PIN_NUM cs_pin, uint8_t data, bool manCS);
 
 #endif /* INC_SHALF1SPI_H_ */
