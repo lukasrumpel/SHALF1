@@ -62,7 +62,7 @@ typedef enum{
 	DMA_TCI = 1 //->Transfer complete Interrupt
 }DMA_IRQ_TYPE;
 
-extern DMA_ERR_CODE dmaInit(DMA_TypeDef* dma, DMA_Channel_TypeDef* dmaChannel, uint32_t adrPer, uint32_t adrMem, uint16_t dataLen, DMA_DIR directionOfTransfer, DMA_CIRC circularMode, bool increment, DMA_MSIZE memoryDataSize, DMA_PSIZE peripheralDataSize, DMA_PRIO priority, DMA_IRQ_TYPE interrupt);
+extern DMA_ERR_CODE dmaInit(DMA_TypeDef* dma, DMA_Channel_TypeDef* dmaChannel, uint32_t adrPer, uint32_t adrMem, uint16_t dataLen, DMA_DIR directionOfTransfer, DMA_CIRC circularMode, bool incrementMEM, bool incrementPER, DMA_MSIZE memoryDataSize, DMA_PSIZE peripheralDataSize, DMA_PRIO priority, DMA_IRQ_TYPE interrupt);
 extern void dmaStart(DMA_Channel_TypeDef* dmaChannel);
 extern void dmaStop(DMA_Channel_TypeDef* dmaChannel);
 
