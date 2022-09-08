@@ -23,7 +23,8 @@ uint8_t shift = 0; //for Interruptclear
 									FROM_PER = 1
   * @param: (DMA_CIRC) circularMode: DMA_CIRC_OFF = 0,
 										DMA_CIRC_ON = 1
-  * @param: (bool) increment: increment of Data (true -> on, false -> off)
+  * @param: (bool) incrementMEM: increment of Data address in memory(true -> on, false -> off)
+  * @param: (bool) incrementPER: increment of Data address in peripheral(true -> on, false -> off)
   * @param: (DMA_MSIZE) memoryDataSize: MSIZE_8BIT = 0,
 											MSIZE_16BIT = 1,
 											MSIZE_32BIT = 2
