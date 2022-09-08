@@ -63,25 +63,23 @@ extern DMA_ERR_CODE dmaInit(DMA_TypeDef* dma, DMA_Channel_TypeDef* dmaChannel, u
 	dmaChannel->CCR |= directionOfTransfer << DMA_CCR_DIR_Pos;
 	dmaChannel->CCR |= circularMode << DMA_CCR_CIRC_Pos;
 
-	//if(directionOfTransfer == FROM_MEM){
+	if ((directionOfTransfer == FROM_MEM) || (directionOfTransfer == FROM_PER)){
 		if(incrementMEM){
 			dmaChannel->CCR |= DMA_CCR_MINC;
 		}
 		else{
 			dmaChannel->CCR &= ~DMA_CCR_MINC_Msk;
 		}
-	//}
-	/*else if(directionOfTransfer == FROM_PER){*/
 		if(incrementPER){
 			dmaChannel->CCR |= DMA_CCR_PINC;
 		}
 		else{
 			dmaChannel->CCR &= ~DMA_CCR_PINC_Msk;
 		}
-	/*}
+	}
 	else{
 		return DMA_INVALID_DIR;
-	}*/
+	}
 
 	dmaChannel->CCR |= memoryDataSize << DMA_CCR_MSIZE_Pos;
 	dmaChannel->CCR |= peripheralDataSize << DMA_CCR_PSIZE_Pos;
