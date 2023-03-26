@@ -69,6 +69,5 @@ extern BKP_ERR_CODE backupWriteByte(uint16_t data, BKPReg BKPRegister);
 extern uint16_t backupReadByte(BKPReg BKPRegister);
 extern BKP_ERR_CODE backupWriteArray(uint16_t* data, BKPReg BKPRegister, uint8_t numOfBytes);
 extern BKP_ERR_CODE backupReadArray(uint16_t* data, BKPReg BKPRegister, uint8_t numOfBytes);
-static uint8_t getIDX(BKPReg BKPRegister);
 
 #endif /* INC_SHALF1BACKUP_H_ */
