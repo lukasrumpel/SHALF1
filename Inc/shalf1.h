@@ -16,9 +16,12 @@
 #include <shalf1SysTick.h>
 #include <shalf1Timer.h>
 #include <shalf1USART.h>
+#include <shalf1Backup.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stm32f1xx.h>
+#include <system_stm32f1xx.h>
 
 #if defined(__STM32F101x6_H) || defined(__STM32F102x6_H) || defined(__STM32F103x6_H)
 	#define LOW_DENS
